@@ -1,0 +1,23 @@
+import java.lang.Math;
+public class Main {
+    public static void main(String[] args) {
+        //дані
+        double a = 3.15;
+        double b = 4;
+        double c = 3;
+
+        //розрах х
+        double numeratorX = a + Math.abs((a / (b * c)) + (b / (a + c))) * Math.log(Math.pow(Math.E, 2));
+        double denominatorX = 20 * a - Math.sqrt(Math.pow(b, 2) + Math.pow(c, 2));
+        double x = numeratorX / denominatorX;
+
+        //розрах y
+        double arctgC = Math.atan(c); //Функція Math.atan обчислює арктангенс (arctg)
+        double expPart = Math.pow(Math.E, (b + 1)); //функція Math.pow використовується для піднесення числа e до степеня (b+1)
+        double y = a * arctgC + expPart;
+
+        //виводимо результат
+        System.out.println("x = " + x);
+        System.out.println("y = " + y);
+    }
+}
